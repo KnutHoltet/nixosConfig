@@ -14,7 +14,6 @@ in {
 
   config = mkIf cfg.enable {
     networking.networkmanager.enable = true;
-    netowrking.hostname = "knuth";
     dns = "none";
 
     hardware.bluetooth.enable = true;

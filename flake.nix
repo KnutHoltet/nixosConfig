@@ -17,6 +17,11 @@
     nix-darwin.inputs.nixpkgs.follows = "nixpkgs";
   };
 
+  neovim = {
+   url = "github:KnutHoltet/lazyvim";
+   inputs.nixpkgs.follows = "nixpkgs";
+  };
+
   outputs = inputs: let
     lib = inputs.snowfall-lib.mkLib {
       inherit inputs;
@@ -40,7 +45,9 @@
         allowUnfree = true;
       };
 
-      overlays = with inputs; [];
+      overlays = with inputs; [
+       neovim.overlays.x86_64-linux.neovim
+      ];
 
       systems.modules.nixos = with inputs; [];
 
