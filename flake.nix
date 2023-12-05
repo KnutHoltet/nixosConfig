@@ -15,12 +15,14 @@
 
     nix-darwin.url = "github:LnL7/nix-darwin";
     nix-darwin.inputs.nixpkgs.follows = "nixpkgs";
+
+    neovim = {
+     url = "github:KnutHoltet/lazyvim";
+     inputs.nixpkgs.follows = "nixpkgs";
+    };
+
   };
 
-  neovim = {
-   url = "github:KnutHoltet/lazyvim";
-   inputs.nixpkgs.follows = "nixpkgs";
-  };
 
   outputs = inputs: let
     lib = inputs.snowfall-lib.mkLib {
