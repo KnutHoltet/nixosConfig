@@ -7,15 +7,20 @@
 }:
 with lib;
 with lib.custom; let
-  cfg = config.services;
+  cfg = config.services.dnscrypt-proxy2;
 in {
-  options.module = with types; {
-    enable = mkBoolOpt true "Enable dns encryption";
+  options.services.dnscrypt-proxy2 = with types; {
+    enable = mkBoolOpt true "DNSCrypt proxy";
+    settings = mkOption {
+      type = types.attrs;
+      default = {};
+      description = "Configuration for DNSCrypt proxy.";
+    };
   };
 
   config =
     mkIf cfg.enable {
-     dnscrypt-proxy2 = {
+     services.dnscrypt-proxy2 = {
 	enable = true;
 	settings = {
 	  ipv6_servers = true;

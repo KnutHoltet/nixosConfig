@@ -14,7 +14,6 @@ in {
 
   config = mkIf cfg.enable {
     networking.networkmanager.enable = true;
-    dns = "none";
 
     hardware.bluetooth.enable = true;
     hardware.bluetooth.powerOnBoot = false;

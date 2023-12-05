@@ -6,17 +6,22 @@
 }:
 with lib;
 with lib.custom; let
-  cfg = config.services.ssh;
+  cfg = config.services.openssh;
 in {
-  options.services.ssh = with types; {
-    enable = mkBoolOpt false "Enable ssh";
+  options.services.openssh = with types; {
+    enable = mkBoolOpt true "OpenSSH server";
+    permitRootLogin = mkOption {
+     type = types.str; 
+     default = "prohibit-password";
+     description = "Permit root login option for OpenSSH.";
+    };
   };
 
   config = mkIf cfg.enable {
     services.openssh = {
       enable = true;
       ports = [22];
-      PermitRootLogin = "prohibit-password";
+      permitRootLogin = "prohibit-password";
     };
 
     users.users = let 

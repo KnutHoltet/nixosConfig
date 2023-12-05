@@ -10,7 +10,7 @@ with lib.custom; let
   cfg = config.suites.common;
 in {
   options.suites.common = with types; {
-    enable = mkBoolOpt true "Enable the common suite";
+    enable = mkBoolOpt true "the common suite";
   };
 
   config = mkIf cfg.enable {
@@ -32,7 +32,7 @@ in {
     #   };
     # };
 
-    services.ssh.enable = true;
+    services.openssh.enable = true;
     programs.dconf.enable = true;
 
     environment.systemPackages = [pkgs.bluetuith pkgs.custom.sys];

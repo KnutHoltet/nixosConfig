@@ -10,7 +10,7 @@
   suites.editing.enable = true;
 
   hardware.nvidia.enable = true;
-  services.ssh.enable = true;
+  services.openssh.enable = true;
 
   environment.systemPackages = with pkgs; [
     custom.boscaceoil
