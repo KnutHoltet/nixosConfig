@@ -63,7 +63,6 @@ in {
         concatStringsSep "\n"
         (mapAttrsToList (n: v: ''export ${n}="${v}"'') cfg);
     };
-  };
 
   console = {
     earlySetup = true;
@@ -86,4 +85,7 @@ in {
       "a5adcb"
     ];
   };
+
+  };
+
 }

@@ -7,14 +7,14 @@
 }:
 with lib;
 with lib.custom; let
-  cfg = config.services;
+  cfg = config.services.fail2ban;
 in {
   options.services = with types; {
-    fail2ban.enable = mkBoolOpt true "Enable fail2ban";
+    enable = mkBoolOpt true "Enable fail2ban";
   };
 
   config =
     mkIf cfg.enable {
-     cfg.fail2ban.enable = true;
+     services.fail2ban.enable = true;
     };
 }

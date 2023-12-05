@@ -15,7 +15,7 @@ in {
   config = mkIf cfg.enable {
     console.useXkbConfig = true;
     services.xserver = {
-      layout = "no", "us";
+      layout = "no,us";
       xkbOptions = "grp:alt_shift_toggle";
     };
   };
