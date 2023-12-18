@@ -4,7 +4,7 @@
   # Enable Bootloader
   system.boot.efi.enable = true;
 
-  suites.desktop.enable = true;
+  # suites.desktop.enable = true;
   suites.development.enable = true;
   suites.gaming.enable = true;
   suites.editing.enable = true;
