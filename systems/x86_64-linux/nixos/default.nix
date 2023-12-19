@@ -5,9 +5,9 @@
   system.boot.efi.enable = true;
 
   # suites.desktop.enable = true;
-  suites.development.enable = true;
-  suites.gaming.enable = true;
-  suites.editing.enable = true;
+  # suites.development.enable = true;
+  # suites.gaming.enable = true;
+  # suites.editing.enable = true;
 
   hardware.nvidia.enable = true;
   services.openssh.enable = true;
@@ -17,7 +17,7 @@
     custom.mcman
   ];
 
-  virtualisation.kvm.enable = true;
+  # virtualisation.kvm.enable = true;
 
   # ======================== DO NOT CHANGE THIS ========================
   system.stateVersion = "23.11";
